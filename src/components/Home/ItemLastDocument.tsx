@@ -9,37 +9,32 @@ export const ItemLastDocument = ({ doc }: { doc: DocumentModel }) => {
   return (
     <motion.div
       layout
-      whileHover={{ scale: 1.001 }}
+      whileHover={{ scale: 1.01 }}
       transition={{ duration: 0.25 }}
-      className="h-96 w-96 bg-gray-200 rounded-2xl flex flex-col items-center shadow-lg"
+      className="w-full max-w-sm bg-gray-200 rounded-2xl flex flex-col shadow-lg overflow-hidden"
     >
-      <div className="flex flex-col items-center overflow-hidden">
-        <img
-          src="https://res.cloudinary.com/dtolumjkr/image/upload/v1760689353/ChatGPT_Image_17_oct._2025_10_21_22_fmts2e.png"
-          alt="img"
-          className="rounded-2xl"
-        />
-      </div>
-      <div className="w-full flex flex-row justify-between items-center py-2 rounded-bl-2xl rounded-br-2xl  px-3">
-        <div className="flex flex-col gap-1 px-2 py-1">
-          <span className="font-montserrat tracking-wider uppercase text-xs line-clamp-1">
+      <img
+        src="https://res.cloudinary.com/dtolumjkr/image/upload/v1760689353/ChatGPT_Image_17_oct._2025_10_21_22_fmts2e.png"
+        alt="document"
+        className="w-full aspect-video object-cover"
+      />
+
+      <div className="flex flex-col justify-between flex-1 p-3">
+        <div>
+          <span className="block font-montserrat tracking-wider uppercase text-xs line-clamp-1">
             {doc.name}
           </span>
-          <span className="font-montserrat tracking-wide italic capitalize text-xs">
+          <span className="block font-montserrat tracking-wide italic capitalize text-xs text-gray-600">
             {doc.category.name}
           </span>
         </div>
-        <div className="">
-          <button
-            onClick={() =>
-              navigate(`/category/${doc.category.slug}/${doc.slug}`)
-            }
-            className="flex flex-row items-center gap-1  px-3 py-2 rounded-2xl bg-white border cursor-pointer border-gray-400 font-montserrat font-medium"
-          >
-            <span className="text-xs tracking-widest uppercase">découvrir</span>
-            <Globe size={15} />
-          </button>
-        </div>
+
+        <button
+          onClick={() => navigate(`/category/${doc.category.slug}/${doc.slug}`)}
+          className="mt-3 flex flex-row justify-center items-center gap-1 px-3 py-2 rounded-2xl bg-white border border-gray-400 font-montserrat font-medium text-xs uppercase tracking-widest hover:bg-gray-100 transition"
+        >
+          découvrir <Globe size={14} />
+        </button>
       </div>
     </motion.div>
   );

@@ -15,7 +15,7 @@ export const SectionLastDocuments = () => {
 
   if (isLoading) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center py-10">
+      <div className="flex-1 flex flex-col items-center justify-center py-10 h-full">
         <SpinnerLoader size={80} />
         <span className="mt-2 text-lg font-medium tracking-wider font-montserrat">
           Chargement...

@@ -42,6 +42,7 @@ export const RegisterForm = () => {
           été envoyé à votre adresse e-mail. Cliquez dessus pour activer votre
           compte.
         </p>
+        <p className="text-red-600 font-bold text-lg">Vérifiez vos spams</p>
       </div>
     );
   }

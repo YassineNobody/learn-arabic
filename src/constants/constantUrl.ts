@@ -1,3 +1,3 @@
 export default {
-  API_URL: "https://learn-arabic.onrender.com",
+  API_URL: "https://backend-floral-darkness-9595.fly.dev",
 };
